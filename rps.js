@@ -8,7 +8,9 @@ function getComputerChoice()  {
 getComputerChoice();
 
 function getPlayerChoice() {
-    playerChoice = prompt('Choose your weapon - Rock Paper or Scissors')
+    playerChoice = prompt('Choose your weapon - Rock Paper or Scissors');
+    console.log(playerChoice)
 }
 
 getPlayerChoice();
+
