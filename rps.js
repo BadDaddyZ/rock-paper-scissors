@@ -1,21 +1,23 @@
 
 
 function rpsMatch() {
-    const computerChoice = ['Rock', 'Paper', 'Scissors']
+    const computerChoice = ['rock', 'paper', 'scissors']
 
     function getComputerChoice()  {
         const choice = computerChoice[Math.floor(Math.random() * computerChoice.length)];        
         console.log(choice);
         
-        const playerChoice = prompt ('Choose your weapon Rock Paper or Scissors');
+        const playerChoiceInput = prompt ('Choose your weapon Rock Paper or Scissors');
+            console.log(playerChoiceInput);
+            const playerChoice = (playerChoiceInput.toLowerCase());
             console.log(playerChoice);
-        
+                    
         if (choice === playerChoice) {
             alert('Tie');
         } else if 
-            (choice === 'Rock' && playerChoice === 'Scissors' || choice === 'Scissors' && playerChoice === 'Paper') {
+            (choice === 'rock' && playerChoice === 'scissors' || choice === 'scissors' && playerChoice === 'paper') {
                 alert('Computer wins');        
-        } else if (playerChoice === 'Rock' && choice === 'Scissors' || playerChoice === 'Scissors' && choice === 'Paper') {
+        } else if (playerChoice === 'rock' && choice === 'scissors' || playerChoice === 'scissors' && choice === 'paper') {
                 alert('You Win');
         }
     }   
