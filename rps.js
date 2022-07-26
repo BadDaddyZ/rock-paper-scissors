@@ -1,28 +1,31 @@
 
-
-function rpsMatch() {
+function game(
+    for (let i = 0; i < 5; i++) {
+function rpsMatch(playerSelection, computerSelection) {
     const computerChoice = ['rock', 'paper', 'scissors']
 
     function getComputerChoice()  {
-        const choice = computerChoice[Math.floor(Math.random() * computerChoice.length)];        
-        console.log(choice);
+        const computerSelection = computerChoice[Math.floor(Math.random() * computerChoice.length)];        
+        //console.log(computerSelection);
         
-        const playerChoiceInput = prompt ('Choose your weapon Rock Paper or Scissors');
-            console.log(playerChoiceInput);
-            const playerChoice = (playerChoiceInput.toLowerCase());
-            console.log(playerChoice);
+        const playerSelection = prompt ('Choose your weapon Rock Paper or Scissors');
+           //console.log(playerSelection);
+            const playerChoice = (playerSelection.toLowerCase());
+           //console.log(playerChoice);
                     
-        if (choice === playerChoice) {
+        if (computerSelection === playerChoice) {
             alert('Tie');
         } else if 
-            (choice === 'rock' && playerChoice === 'scissors' || choice === 'scissors' && playerChoice === 'paper') {
+            (computerSelection === 'rock' && playerChoice === 'scissors' || computerSelection === 'scissors' && playerChoice === 'paper') {
                 alert('Computer wins');        
-        } else if (playerChoice === 'rock' && choice === 'scissors' || playerChoice === 'scissors' && choice === 'paper') {
+        } else if (playerChoice === 'rock' && computerSelection === 'scissors' || playerChoice === 'scissors' && computerSelection === 'paper') {
                 alert('You Win');
         }
+        return [playerSelection, computerSelection];
     }   
-    getComputerChoice();
-
-   
+     
+     console.log(getComputerChoice(playerSelection, computerSelection)); 
     } 
 rpsMatch();
+    }
+)
