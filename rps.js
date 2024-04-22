@@ -1,32 +1,29 @@
 
-function game() {
-let rounds = parseInt(prompt('How many rounds would you like to play'));
-for (let i = 1; i <= rounds; i++) {   
-      
-function playRound(playerSelection, computerSelection) {
-    const computerChoice = ['rock', 'paper', 'scissors']
+function getComputerChoice() {
+    const choices = ['rock', 'paper', 'scissors'];
+    return choices [Math.floor(Math.random() * choices.length)];
+}      
+function playRound() {
+    const computerSelection = getComputerChoice();
+    const playerSelection = prompt ('Choose your weapon: Rock, Paper, or Scissors').toLowerCase();
+    console.log("Computer selects: " + computerSelection);
+    console.log("Player seelcts: " + playerSelection);
 
-    function getComputerChoice()  {
-        const computerSelection = computerChoice[Math.floor(Math.random() * computerChoice.length)];        
-        console.log(computerSelection);
-        
-        const playerSelection = prompt ('Choose your weapon Rock Paper or Scissors');
-           const playerChoice = (playerSelection.toLowerCase());
-           console.log(playerChoice);
-                
-        if (computerSelection === playerChoice) {
+        if (computerSelection === playerSelection) {
             console.log('Tie');
         } else if 
-            (computerSelection === 'rock' && playerChoice === 'scissors' || computerSelection === 'scissors' && playerChoice === 'paper' || computerSelection === 'paper' && playerChoice === 'rock') {
+            (computerSelection === 'rock' && playerSelection === 'scissors' || computerSelection === 'scissors' && playerSelection === 'paper' || computerSelection === 'paper' && playerSelection === 'rock') {
             console.log('Computer wins');        
-        } else if (playerChoice === 'rock' && computerSelection === 'scissors' || playerChoice === 'scissors' && computerSelection === 'paper' || playerChoice === 'paper' && computerSelection === 'rock') {
+        } else {
             console.log('You Win');
+        };
         }
-        }
-        getComputerChoice();
-        return [playerSelection, computerSelection];
-    }   
-    playRound();    
+function game () {
+    let rounds = parseInt(prompt("How many rounds would you like to play?"));
+    for (let i = 1; i <= rounds; i++) {
+        console.log("Round " +i);
+        playRound();
+    }
 }
-}
+
 game();
