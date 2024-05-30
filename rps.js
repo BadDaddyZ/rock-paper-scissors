@@ -28,7 +28,7 @@ function playRound(playerSelection) {
 
         if (playerScore >= 5 || computerScore >= 5) {
             let winner = playerScore >= 5 ? 'Player' : 'Computer';
-            winnerDiv.innerHTML = '${winner} wins the game!';
+            winnerDiv.innerHTML = `${winner} wins the game!`;
             document.getElementById('rock').disabled = true;
             document.getElementById('paper').disabled = true;
             document.getElementById('scissors').disabled = true;
